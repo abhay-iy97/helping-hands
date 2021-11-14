@@ -818,11 +818,20 @@
 // Add the circle for this city to the map.
 			console.log(values[val][4])
 			console.log(val)
+			var zipCode = values[val][0];
 			var centerNew = {lat: values[val][4], lng: values[val][5]};
+			// $("#target").text(zipCode);
+
+			// window.onload = function() {
+				//when the document is finished loading, replace everything
+				//between the <a ...> </a> tags with the value of splitText
+			// document.getElementById("target").innerHTML=zipCode;
+			// } 
+
 			var contentString = '<div id="content"> ' +
 							'<div id="siteNotice">' +
 							"</div>" +
-							'<h1 id="firstHeading" class="firstHeading">Details of Los Angeles County</h1> \n' +
+							'<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
 							'<div id="bodyContent">' +
 							"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area</h4>\n" +
 							"<h4> Click <a href = '' >here</a> to see all the upcoming events. </h4>\n" +
