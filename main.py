@@ -88,7 +88,7 @@ def sms_reply():
     return str(resp)
 
 
-db = pymysql.connect(host="sql3.freemysqlhosting.net", user="sql3450941", password="I1TIEzd82P", database="sql3450941")
+db = pymysql.connect(host="sql3.freemysqlhosting.net", user="sql3450941", password="I1TIEzd82P", database="sql3450941", )
 @app.route("/db")
 def dbs():
     # db = pymysql.connect("sql3.freemysqlhosting.net", "sql3450941", "I1TIEzd82P", "sql3450941")
