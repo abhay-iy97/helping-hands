@@ -12,9 +12,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-	<link rel="canonical" href="https://demo-basic.adminkit.io/ui-typography.html" />
+	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-profile.html" />
 
-	<title>Typography | AdminKit Demo</title>
+	<title>Profile | AdminKit Demo</title>
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand" href="index_adminkit.html">
           <span class="align-middle">AdminKit</span>
         </a>
 
@@ -34,12 +34,12 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="index.html">
+						<a class="sidebar-link" href="index_adminkit.html">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="pages-profile.html">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
             </a>
@@ -85,7 +85,7 @@
             </a>
 					</li>
 
-					<li class="sidebar-item active">
+					<li class="sidebar-item">
 						<a class="sidebar-link" href="ui-typography.html">
               <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Typography</span>
             </a>
@@ -280,7 +280,7 @@
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="index_adminkit.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Log out</a>
@@ -294,143 +294,176 @@
 				<div class="container-fluid p-0">
 
 					<div class="mb-3">
-						<h1 class="h3 d-inline align-middle">Typography</h1>
+						<h1 class="h3 d-inline align-middle">Profile</h1>
 						<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">
-      Get more typography examples
+      Get more page examples
   </a>
 					</div>
 					<div class="row">
-						<div class="col-12 col-lg-6">
-							<div class="card">
+						<div class="col-md-4 col-xl-3">
+							<div class="card mb-3">
 								<div class="card-header">
-									<h5 class="card-title">Headings</h5>
-									<h6 class="card-subtitle text-muted">All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available.</h6>
+									<h5 class="card-title mb-0">Profile Details</h5>
 								</div>
-								<div class="card-body">
-									<h1>This is a heading h1</h1>
-									<p class="text-muted">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-										vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero.</p>
-									<h2>This is a heading h2</h2>
-									<p class="text-muted">Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-										vel, luctus pulvinar, hendrerit id, lorem.</p>
-									<h3>This is a heading h3</h3>
-									<p class="text-muted">Etiam rhoncus. Maecenas tempus, tellus condimentum rhoncus, sem quam libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, vel.</p>
-									<h4>This is a heading h4</h4>
-									<p class="text-muted">Etiam rhoncus. Maecenas tempus, tellus condimentum rhoncus, sem quam libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, vel.</p>
-									<h5>This is a heading h5</h5>
-									<p class="text-muted">Sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel.</p>
-									<h6>This is a heading h6</h6>
-									<p class="text-muted">Sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel.</p>
-								</div>
-							</div>
+								<div class="card-body text-center">
+									<img src="img/avatars/avatar-4.jpg" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
+									<h5 class="card-title mb-0">Christina Mason</h5>
+									<div class="text-muted mb-2">Lead Developer</div>
 
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Coloured text</h5>
-									<h6 class="card-subtitle text-muted">Contextual text classes.</h6>
+									<div>
+										<a class="btn btn-primary btn-sm" href="#">Follow</a>
+										<a class="btn btn-primary btn-sm" href="#"><span data-feather="message-square"></span> Message</a>
+									</div>
 								</div>
+								<hr class="my-0" />
 								<div class="card-body">
-									<p class="text-primary">This line of text contains the text-primary class.</p>
-									<p class="text-secondary">This line of text contains the text-secondary class.</p>
-									<p class="text-success">This line of text contains the text-success class.</p>
-									<p class="text-danger">This line of text contains the text-danger class.</p>
-									<p class="text-warning">This line of text contains the text-warning class.</p>
-									<p class="text-info">This line of text contains the text-info class.</p>
+									<h5 class="h6 card-title">Skills</h5>
+									<a href="#" class="badge bg-primary me-1 my-1">HTML</a>
+									<a href="#" class="badge bg-primary me-1 my-1">JavaScript</a>
+									<a href="#" class="badge bg-primary me-1 my-1">Sass</a>
+									<a href="#" class="badge bg-primary me-1 my-1">Angular</a>
+									<a href="#" class="badge bg-primary me-1 my-1">Vue</a>
+									<a href="#" class="badge bg-primary me-1 my-1">React</a>
+									<a href="#" class="badge bg-primary me-1 my-1">Redux</a>
+									<a href="#" class="badge bg-primary me-1 my-1">UI</a>
+									<a href="#" class="badge bg-primary me-1 my-1">UX</a>
 								</div>
-							</div>
-						</div>
-						<div class="col-12 col-lg-6">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Inline text</h5>
-									<h6 class="card-subtitle text-muted">Styling for common inline HTML5 elements.</h6>
-								</div>
+								<hr class="my-0" />
 								<div class="card-body">
-									<p>You can use the mark-tag to <mark>highlight</mark> text.</p>
-									<p><del>This line of text can be treated as deleted text.</del></p>
-									<p><ins>This line of text can be treated as an addition to the document.</ins></p>
-									<p><strong>Bold text using the strong-tag</strong></p>
-									<p><em>Italicized text using the em-tag</em></p>
-								</div>
-							</div>
+									<h5 class="h6 card-title">About</h5>
+									<ul class="list-unstyled mb-0">
+										<li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Lives in <a href="#">San Francisco, SA</a></li>
 
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Blockquotes</h5>
-									<h6 class="card-subtitle text-muted">For quoting blocks of content from another source within your document.</h6>
+										<li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> Works at <a href="#">GitHub</a></li>
+										<li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> From <a href="#">Boston</a></li>
+									</ul>
 								</div>
+								<hr class="my-0" />
 								<div class="card-body">
-									<blockquote>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-										</p>
-										<footer>
-											Someone famous in <cite title="Source Title">Source Title</cite>
-										</footer>
-									</blockquote>
-									<p class="text-muted m-b-15 m-t-20 font-13">
-										Add <code>.blockquote-reverse</code> for a blockquote with right-aligned content.
-									</p>
-									<blockquote class="blockquote-reverse m-b-0">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-										</p>
-										<footer>
-											Someone famous in <cite title="Source Title">Source Title</cite>
-										</footer>
-									</blockquote>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">List unordered</h5>
-									<h6 class="card-subtitle text-muted">The unordered list items will are marked with bullets.</h6>
-								</div>
-								<div class="card-body">
-									<ul>
-										<li>
-											Lorem ipsum dolor sit amet
-										</li>
-										<li>
-											Consectetur adipiscing elit
-										</li>
-										<li>
-											Nulla volutpat aliquam velit
-										</li>
-										<li>
-											Phasellus iaculis neque
-										</li>
-										<li>
-											Eget porttitor lorem
-										</li>
+									<h5 class="h6 card-title">Elsewhere</h5>
+									<ul class="list-unstyled mb-0">
+										<li class="mb-1"><a href="#">staciehall.co</a></li>
+										<li class="mb-1"><a href="#">Twitter</a></li>
+										<li class="mb-1"><a href="#">Facebook</a></li>
+										<li class="mb-1"><a href="#">Instagram</a></li>
+										<li class="mb-1"><a href="#">LinkedIn</a></li>
 									</ul>
 								</div>
 							</div>
+						</div>
 
+						<div class="col-md-8 col-xl-9">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title">List ordered</h5>
-									<h6 class="card-subtitle text-muted">The ordered list items will are marked with numbers.</h6>
+
+									<h5 class="card-title mb-0">Activities</h5>
 								</div>
-								<div class="card-body">
-									<ol>
-										<li>
-											Lorem ipsum dolor sit amet
-										</li>
-										<li>
-											Consectetur adipiscing elit
-										</li>
-										<li>
-											Nulla volutpat aliquam velit
-										</li>
-										<li>
-											Phasellus iaculis neque
-										</li>
-										<li>
-											Eget porttitor lorem
-										</li>
-									</ol>
+								<div class="card-body h-100">
+
+									<div class="d-flex align-items-start">
+										<img src="img/avatars/avatar-5.jpg" width="36" height="36" class="rounded-circle me-2" alt="Vanessa Tucker">
+										<div class="flex-grow-1">
+											<small class="float-end text-navy">5m ago</small>
+											<strong>Vanessa Tucker</strong> started following <strong>Christina Mason</strong><br />
+											<small class="text-muted">Today 7:51 pm</small><br />
+
+										</div>
+									</div>
+
+									<hr />
+									<div class="d-flex align-items-start">
+										<img src="img/avatars/avatar.jpg" width="36" height="36" class="rounded-circle me-2" alt="Charles Hall">
+										<div class="flex-grow-1">
+											<small class="float-end text-navy">30m ago</small>
+											<strong>Charles Hall</strong> posted something on <strong>Christina Mason</strong>'s timeline<br />
+											<small class="text-muted">Today 7:21 pm</small>
+
+											<div class="border text-sm text-muted p-2 mt-1">
+												Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
+												pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
+											</div>
+
+											<a href="#" class="btn btn-sm btn-danger mt-1"><i class="feather-sm" data-feather="heart"></i> Like</a>
+										</div>
+									</div>
+
+									<hr />
+									<div class="d-flex align-items-start">
+										<img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Christina Mason">
+										<div class="flex-grow-1">
+											<small class="float-end text-navy">1h ago</small>
+											<strong>Christina Mason</strong> posted a new blog<br />
+
+											<small class="text-muted">Today 6:35 pm</small>
+										</div>
+									</div>
+
+									<hr />
+									<div class="d-flex align-items-start">
+										<img src="img/avatars/avatar-2.jpg" width="36" height="36" class="rounded-circle me-2" alt="William Harris">
+										<div class="flex-grow-1">
+											<small class="float-end text-navy">3h ago</small>
+											<strong>William Harris</strong> posted two photos on <strong>Christina Mason</strong>'s timeline<br />
+											<small class="text-muted">Today 5:12 pm</small>
+
+											<div class="row g-0 mt-1">
+												<div class="col-6 col-md-4 col-lg-4 col-xl-3">
+													<img src="img/photos/unsplash-1.jpg" class="img-fluid pe-2" alt="Unsplash">
+												</div>
+												<div class="col-6 col-md-4 col-lg-4 col-xl-3">
+													<img src="img/photos/unsplash-2.jpg" class="img-fluid pe-2" alt="Unsplash">
+												</div>
+											</div>
+
+											<a href="#" class="btn btn-sm btn-danger mt-1"><i class="feather-sm" data-feather="heart"></i> Like</a>
+										</div>
+									</div>
+
+									<hr />
+									<div class="d-flex align-items-start">
+										<img src="img/avatars/avatar-2.jpg" width="36" height="36" class="rounded-circle me-2" alt="William Harris">
+										<div class="flex-grow-1">
+											<small class="float-end text-navy">1d ago</small>
+											<strong>William Harris</strong> started following <strong>Christina Mason</strong><br />
+											<small class="text-muted">Yesterday 3:12 pm</small>
+
+											<div class="d-flex align-items-start mt-1">
+												<a class="pe-3" href="#">
+                <img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Christina Mason">
+              </a>
+												<div class="flex-grow-1">
+													<div class="border text-sm text-muted p-2 mt-1">
+														Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<hr />
+									<div class="d-flex align-items-start">
+										<img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Christina Mason">
+										<div class="flex-grow-1">
+											<small class="float-end text-navy">1d ago</small>
+											<strong>Christina Mason</strong> posted a new blog<br />
+											<small class="text-muted">Yesterday 2:43 pm</small>
+										</div>
+									</div>
+
+									<hr />
+									<div class="d-flex align-items-start">
+										<img src="img/avatars/avatar.jpg" width="36" height="36" class="rounded-circle me-2" alt="Charles Hall">
+										<div class="flex-grow-1">
+											<small class="float-end text-navy">1d ago</small>
+											<strong>Charles Hall</strong> started following <strong>Christina Mason</strong><br />
+											<small class="text-muted">Yesterdag 1:51 pm</small>
+										</div>
+									</div>
+
+									<hr />
+									<div class="d-grid">
+										<a href="#" class="btn btn-primary">Load more</a>
+									</div>
 								</div>
 							</div>
 						</div>
