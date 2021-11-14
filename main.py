@@ -59,11 +59,13 @@ def login():
     username = request.args.get('email')
     password = request.args.get('pass')
     validation(username, password)  #chcek if username and password exists in DB
+    
     return redirect(url_for('dashboard'), code=307)
 
 @app.route('/dashboard', methods=['POST', 'GET'])
 def dashboard():
-    return render_template('dashboard.html')
+    count=41290
+    return render_template('dashboard.html', count = count)
 
 @app.route('/profile', methods=['POST', 'GET'])
 def profile():
