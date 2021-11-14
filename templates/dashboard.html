@@ -74,7 +74,7 @@
 							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img src="{{ url_for('static',filename='img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+								<img src="{{ url_for('static',filename='img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Kabir Singh" /> <span class="text-dark">Kabir Singh</span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="{{ url_for('profile') }}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
@@ -83,7 +83,7 @@
 								<a class="dropdown-item" href="{{ url_for('dashboard') }}"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Log out</a>
+								<a class="dropdown-item" href="{{ url_for('index')}}">Log out</a>
 							</div>
 						</li>
 					</ul>
@@ -94,7 +94,9 @@
 				<div class="container-fluid p-0">
 
 					<h1 class="h3 mb-3"><strong>My</strong> Dashboard</h1>
-
+					<!-- <form name="myForm" action = "/grantaccess" method = post onsubmit="return validateForm()"> -->
+						<!-- <button type="button" onclick="window.location.href='{{url_for('location', zipCode='90007')}}';">Click Me</button> -->
+					<!-- </form> -->
 					<div class="row">
 						<div class="col-xl-6 col-xxl-5 d-flex">
 							<div class="w-100">
