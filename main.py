@@ -14,8 +14,6 @@ app.secret_key = 'my secret is my secret none of your secret'
 
 @app.route('/')
 def index():
-    
-
     return render_template('index.html')
 
 
@@ -82,12 +80,13 @@ def donations():
 def validation(username, password):
     pass
 
-@app.route('/addEvent')
+@app.route('/addEvent', methods=['POST', 'GET'])
 def addEvent():
-    time = request.args.get('time')
-    date = request.args.get('date')
-    venue = request.args.get('venue')
-    #Call db from here to save this data
+    name = request.args.get('event_name')
+    time = request.args.get('event_time')
+    date = request.args.get('event_date')
+    venue = request.args.get('event_venue')
+    return name
 
 
 def cancelEvent():
