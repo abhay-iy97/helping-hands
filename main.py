@@ -101,12 +101,13 @@ def validation(username, password):
 
 @app.route('/addEvent', methods=['POST', 'GET'])
 def addEvent():
-    name = request.args.get('event_name')
-    time = request.args.get('event_time')
-    date = request.args.get('event_date')
-    venue = request.args.get('event_venue')
+    name = request.form['event_name']
+    # time = request.args.get('event_time')
+    # date = request.args.get('event_date')
+    # venue = request.args.get('event_venue')
     # Numbers from db in the same zipcode
     numbers_to_message = ['+12028094943']
+    app.logger.warning("name=", name)
     for number in numbers_to_message:
         message = client.messages \
             .create(
