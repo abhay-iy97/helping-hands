@@ -6,11 +6,11 @@
 	<link  href="css/create_event.css" rel="stylesheet">
 </head>
 <div class="container">
-    <form>
+    <form action="/addEvent" method="post">
         <div class="row">
             <div class="col-half">
                 <h4 style="padding-left: 10px; color:#212529">Event Name</h4>
-                <div class="input-group"><input type="text" style="border-radius: 10px;" id="event_name" placeholder="Event Name" /></div>
+                <div class="input-group"><input type="text" style="border-radius: 10px;" name="event_name" id="event_name" placeholder="Event Name"/></div>
             </div>
             <div class="col-half">
                 <h4 style="padding-left: 10px; color:#212529">Event Venue</h4>
@@ -37,7 +37,7 @@
                 <div class="input-group"><input type="text" style="border-radius: 10px;" id="event_zip" placeholder="Event Time" /></div>
             </div>
             <div class="container-login100-form-btn">
-                <button class="button button2" style="border-radius: 10px;" formaction="/addEvent">
+                <button class="button button2" type="submit" style="border-radius: 10px;">
                     Submit
                 </button>
             </div>
