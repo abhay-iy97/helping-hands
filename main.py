@@ -1,20 +1,18 @@
 from flask import Flask, redirect, url_for, render_template, request
 import requests
 import urllib
-from twilio.twiml.messaging_response import MessagingResponse
-from twilio.rest import Client
 import pymysql
 
 #initalizing flask app
-app = Flask(__name__)
-app.secret_key = 'my secret is my secret none of your secret'
+app = Flask("__name__")
+app.secret_key = 'my secret and not your secret'
+
+
+# @app.route('/aboutus')
+# def about():
+#     return render_template("about.html")
 
 db = pymysql.connect(host="sql3.freemysqlhosting.net", user="sql3450941", password="I1TIEzd82P", database="sql3450941")
-account_sid = 'ACe656e62dfa83c630b54d7c877ac48100'
-auth_token = 'ab068d7893281856f13c1d185961cc29'
-client = Client(account_sid, auth_token)
-
-
 # @app.route('/aboutus')
 # def about():
 #     return render_template("about.html")
@@ -71,7 +69,14 @@ def login():
 
 @app.route('/dashboard', methods=['POST', 'GET'])
 def dashboard():
-    return render_template('dashboard.html')
+    cursor = db.cursor()
+    sql = "Select * from Zipcodes limit 3;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    # return toJson(results)
+    count = 41290
+    return render_template('dashboard.html',result = results, count = count)
+
 
 @app.route('/profile', methods=['POST', 'GET'])
 def profile():
@@ -85,6 +90,7 @@ def events():
 def donations():
     return render_template('donations.html')
 
+
 def validation(username, password):
     pass
 
@@ -94,36 +100,7 @@ def addEvent():
     time = request.args.get('event_time')
     date = request.args.get('event_date')
     venue = request.args.get('event_venue')
-    
-    # Numbers from db in the same zipcode
-    numbers_to_message = ['+12028094943']
-    for number in numbers_to_message:
-        message = client.messages \
-            .create(
-            body='Event ' + str(name) + ' near You. Please reply Yes to confirm. Otherwise ignore.',
-            from_='+14158911938',
-            to=number
-        )
-
-        # print(message.sid)
-        # return message.status
-
-    return 'abc'
-
-
-@app.route("/smsreply", methods=['GET', 'POST'])
-def sms_reply():
-    """Respond to incoming calls with a simple text message."""
-    body = request.values.get('Body', None)
-    # Start our TwiML response
-    resp = MessagingResponse()
-
-    # Add a message
-    if body == 'Yes':
-        resp.message("Thank You for your registration.")
-
-    return str(resp)
-
+    return name
 
 @app.route('/maps', methods=['POST', 'GET'])
 def maps():
@@ -145,8 +122,9 @@ def authorityAccess():
     cursor.execute(sql)
     results = cursor.fetchall()
     # return toJson(results)
-    
-    return render_template('dashboardAuthority.html', result = results)
+    count = 41290
+    return render_template('dashboardAuthority.html', result = results, count = count )
+
 
 def cancelEvent():
     pass

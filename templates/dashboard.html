@@ -134,7 +134,7 @@
 														</div>
 													</div>
 												</div>
-												<h1 class="mt-1 mb-3">{{ count }}</h1>
+												<h1 class="mt-1 mb-3">41290</h1>
 												<div class="mb-0">
 													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> -37.84% </span>
 													<span class="text-muted">since last year</span>
@@ -245,7 +245,7 @@
 									<h5 class="card-title mb-0">Real-Time</h5>
 								</div>
 								<div class="card-body px-4">
-									<div id="world_map" style="height:350px;"></div>
+									<div id="default_map" style="height:350px;"></div>
 								</div>
 							</div>
 						</div>
@@ -611,6 +611,234 @@
 			});
 		});
 	</script>
+
+
+<script>
+	var values = JSON.parse('{{result|tojson}}');
+	console.log(values);
+	const citymap = {
+		museum: {
+			center: { lat: 34.06842217402775 , lng: -118.36151149024859 },
+			radius: 1700,
+
+		},
+		newyork: {
+			center: { lat: 40.714, lng: -74.005 },
+			radius: 84051,
+		},
+		losangeles: {
+			center: { lat: 34.02740062940116 , lng: -118.2838394088855},
+			radius: 2000,
+		},
+		vancouver: {
+			center: { lat: 49.25, lng: -123.1 },
+			radius: 60311,
+		},
+		};
+	function initMaps() {
+		var defaultMap = {
+			zoom: 11,
+			center: {
+				lat: 34.023824531798105,
+				lng: -118.28401851974486
+				//34.023824531798105, -118.28401851974486
+			},
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+		let map = new google.maps.Map(document.getElementById("default_map"), defaultMap);
+		// map.data.loadGeoJson(
+		// "https://github.com/Supercool1604/AI/blob/master/Zip_Codes_(LA_County).geojson"
+		  // );
+	// 	  var featureStyle = {
+	// 	strokeColor: '#ff3333',
+	// 	strokeWeight: 4
+	// }
+
+
+
+	/**
+	 * Checking dor data from the database.	
+	 *	Only for testing purposes
+	 */
+	var count = 0;
+
+	for (const val in values) {
+// Add the circle for this city to the map.
+			console.log(values[val][4] < 33.9);
+			console.log(val);
+			var zipCode = values[val][0];
+			var centerNew = {lat: values[val][4], lng: values[val][5]};
+			// $("#target").text(zipCode);
+
+			// window.onload = function() {
+				//when the document is finished loading, replace everything
+				//between the <a ...> </a> tags with the value of splitText
+			// document.getElementById("target").innerHTML=zipCode;
+			// } 
+			var contentString;
+		
+				console.log("here")
+				contentString = '<div id="content"> ' +
+							'<div id="siteNotice">' +
+							"</div>" +
+							'<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
+							'<div id="bodyContent">' +
+							"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 15541</h4>\n" +
+							"<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
+							"</div>" +
+							"</div>";
+			
+			{
+			var contentString2 = '<div id="content"> ' +
+							'<div id="siteNotice">' +
+							"</div>" +
+							'<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
+							'<div id="bodyContent">' +
+							"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 13982</h4>\n" +
+							"<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
+							"</div>" +
+							"</div>";
+			}
+			
+			var	contentString3 = '<div id="content"> ' +
+							'<div id="siteNotice">' +
+							"</div>" +
+							'<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
+							'<div id="bodyContent">' +
+							"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 11767</h4>\n" +
+							"<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
+							"</div>" +
+							"</div>";
+			
+			count = count + 1;
+			const cityCircle = new google.maps.Circle({
+			// strokeColor: "green",
+			// strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: "red",
+			// fillOpacity: 0.35,
+			map,
+			center: centerNew,
+			radius: values[val][3],
+			// url: ""
+			});
+			// var infowindow = new google.maps.InfoWindow({
+			// content: contentString,
+			// });
+			// infowindow[city] = new google.maps.InfoWindow({
+			  // content: citymap[city].radius;
+		   //  });
+			// cityCircle.addListener("click", () => {
+			// 	infowindow.open({
+			// anchor: cityCircle,
+			// map,
+			// shouldFocus: true,
+			// });
+			// });
+			// var Loc = new google.maps.LatLng(city.center.lat,city.center.lng);
+			var INFO_WINDOW_WIDTH = 352;                                
+			var infowindow = new google.maps.InfoWindow({
+			// position :Loc,
+			maxWidth: INFO_WINDOW_WIDTH
+			});
+
+			google.maps.event.addListener(cityCircle, 'click', function(ev){
+			infowindow.close();
+			infowindow.setPosition(cityCircle.getCenter());
+			infowindow.open(map);
+			if(cityCircle.radius==2000)
+				infowindow.setContent(contentString);
+			else if (cityCircle.radius==2000)
+				infowindow.setContent(contentString2);
+			else
+				infowindow.setContent(contentString3);
+			})
+		};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// for (const city in citymap) {
+		// 	var contentString = '<div id="content"> ' +
+		// 					'<div id="siteNotice">' +
+		// 					"</div>" +
+		// 					'<h1 id="firstHeading" class="firstHeading">Details</h1> \n' +
+		// 					'<div id="bodyContent">' +
+		// 					"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area</h4>\n" +
+		// 					"<h4> Click <a href = '' >here</a> to see all the upcoming events. </h4>\n" +
+		// 					"<h4> Click <a href ='' >here </a> to send an SMS to everyone in need. </h4>\n " 
+		// 					"</div>" +
+		// 					"</div>";
+		// 	const cityCircle = new google.maps.Circle({
+			
+		// 	strokeWeight: 2,
+		// 	fillColor: "red",
+		
+		// 	map,
+		// 	center: citymap[city].center,
+		// 	radius: citymap[city].radius,
+		// 	// url: ""
+		// 	});
+		// 	// var infowindow = new google.maps.InfoWindow({
+		// 	// content: contentString,
+		// 	// });
+		// 	// infowindow[city] = new google.maps.InfoWindow({
+		  // 	// content: citymap[city].radius;
+		   // //  });
+		// 	// cityCircle.addListener("click", () => {
+		// 	// 	infowindow.open({
+		// 	// anchor: cityCircle,
+		// 	// map,
+		// 	// shouldFocus: true,
+		// 	// });
+		// 	// });
+		// 	// var Loc = new google.maps.LatLng(city.center.lat,city.center.lng);
+		// 	var INFO_WINDOW_WIDTH = 352;                                
+		// 	var infowindow = new google.maps.InfoWindow({
+		// 	// position :Loc,
+		// 	maxWidth: INFO_WINDOW_WIDTH
+		// 	});
+
+		// 	google.maps.event.addListener(cityCircle, 'click', function(ev){
+		// 	infowindow.setPosition(cityCircle.getCenter());
+		// 	infowindow.open(map);
+		// 	infowindow.setContent(contentString);
+		// 	})
+		// };
+
+		var hybridMap = {
+			zoom: 14,
+			center: {
+				lat: 40.712784,
+				lng: -74.005941
+			},
+			mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+		new google.maps.Map(document.getElementById("hybrid_map"), hybridMap);
+	}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7fQCTLASDJSuJjurgQHdgfLDtt2V55VY&callback=initMaps" async defer></script>
+
+
+
+
+
+
+
 
 </body>
 
