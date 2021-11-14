@@ -87,9 +87,17 @@ def dashboard():
 def profile():
     return render_template('pages-profile.html')
 
+@app.route('/profileAuthority', methods=['POST', 'GET'])
+def profileAuthority():
+    return render_template('pages-profile-authority.html')
+
 @app.route('/events', methods=['POST', 'GET'])
 def events():
     return render_template('events.html')
+
+@app.route('/eventsAuthority', methods=['POST', 'GET'])
+def eventsAuthority():
+    return render_template('eventsAuthority.html')
 
 @app.route('/donations', methods=['POST', 'GET'])
 def donations():
