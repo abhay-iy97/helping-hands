@@ -28,6 +28,7 @@ def location():
 
     # year = request.args.get('year')
     zipCode = request.args.get('zipCode')
+    app.logger.warning("zipcode", zipCode)
     # date = request.args.get('date')
     url = 'http://dev.virtualearth.net/REST/v1/Locations?' 
     key = 'Ak7iTQXGfzgqJSIaOPYxLU4VGFA0yiVwXFgFUAhUfEtqBd_SuKzcKMhAmGN2fq9n'
