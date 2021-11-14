@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Events</title>
+	<link  href="css/create_event.css" rel="stylesheet">
+</head>
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-half">
+                <h4>Event Name</h4>
+                <div class="input-group"><input type="text" id="event_name" placeholder="Event Name" /></div>
+            </div>
+            <div class="col-half">
+                <h4>Event Venue</h4>
+                <div class="input-group"><input type="text" id="event_venue" placeholder="Event Venue" /></div>
+            </div>
+            <div class="col-half">
+                <h4>Event Time</h4>
+                <div class="input-group"><input type="text" id="event_time" placeholder="Event Time" /></div>
+            </div>
+            <div class="col-half">
+                <h4>Event Description</h4>
+                <div class="input-group"><input type="text" id="event_desc" placeholder="Event Description" /></div>
+            </div>
+            <div class="col-half" id="event_date">
+                <h4>Event Date</h4>
+                <div class="input-group">
+                    <div class="col-third"><input type="text" placeholder="DD" /></div>
+                    <div class="col-third"><input type="text" placeholder="MM" /></div>
+                    <div class="col-third"><input type="text" placeholder="YYYY" /></div>
+                </div>
+            </div>
+            <div class="col-half">
+                <h4>Zipcode</h4>
+                <div class="input-group"><input type="text" id="event_zip" placeholder="Event Time" /></div>
+            </div>
+            <div class="container-login100-form-btn">
+                <button class="login100-form-btn" formaction="/addEvent">
+                    Create
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
