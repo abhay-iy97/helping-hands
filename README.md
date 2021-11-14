@@ -1,5 +1,7 @@
 # Project Name - Helping Hands
 
+Hackathon project for Trojan Hacks 2021
+
 ## Inspiration
 
 As a team driven by the motive to contribute towards the greater good of LA, we aimed to create a project which would help unhoused and low income individuals by providing them with information regarding shelters and multiple charity events nearby.
