@@ -1,350 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
-	<meta name="author" content="HelpingHands">
-	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="HelpingHands">
+    <meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="shortcut icon" href="{{ url_for('static',filename='img/icons/icon-48x48.png') }}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/icons/icon-48x48.png') }}" />
 
-	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-	<title>Dashboard</title>
+    <title>Dashboard</title>
 
-	<link href="{{ url_for('static',filename='css/app.css') }}" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+    <link href="{{ url_for('static',filename='css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
 
-<body>
-	<div class="wrapper">
-		<nav id="sidebar" class="sidebar js-sidebar">
-			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="{{url_for('dashboard')}}" >
-          <span class="align-middle">Helping Hands</span>
-        </a>
+  <body>
+    <div class="wrapper">
+      <nav id="sidebar" class="sidebar js-sidebar">
+        <div class="sidebar-content js-simplebar">
+          <a class="sidebar-brand" href="{{url_for('dashboard')}}">
+            <span class="align-middle">Helping Hands</span>
+          </a>
 
-				<ul class="sidebar-nav">
-					<li class="sidebar-header">
-						Pages
-					</li>
+          <ul class="sidebar-nav">
+            <li class="sidebar-header">
+              Pages
+            </li>
 
-					<li class="sidebar-item active">
-						<a class="sidebar-link"  href="{{url_for('dashboard')}}">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{url_for('profile')}}">
-              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{url_for('events')}}">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Events</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{url_for('donations')}}">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Donations</span>
-            </a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-
-		<div class="main">
-			<nav class="navbar navbar-expand navbar-light navbar-bg">
-				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
-				<div class="navbar-collapse collapse">
-					<ul class="navbar-nav navbar-align">
-						<li class="nav-item dropdown">		
-							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
+            <li class="sidebar-item active">
+              <a class="sidebar-link" href="{{url_for('dashboard')}}">
+                <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
               </a>
+            </li>
 
-							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img src="{{ url_for('static',filename='img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Kabir Singh" /> <span class="text-dark">Kabir Singh</span>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{url_for('profile')}}">
+                <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
               </a>
-							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="{{ url_for('profile') }}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{ url_for('dashboard') }}"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{ url_for('index')}}">Log out</a>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
+            </li>
 
-			<main class="content">
-				<div class="container-fluid p-0">
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{url_for('events')}}">
+                <i class="align-middle" data-feather="book"></i> <span class="align-middle">Events</span>
+              </a>
+            </li>
 
-<h1 class="h3 mb-3"><strong>My</strong> Dashboard</h1>
-					<!-- <form name="myForm" action = "/grantaccess" method = post onsubmit="return validateForm()"> -->
-						<!-- <button type="button" onclick="window.location.href='{{url_for('location', zipCode='90007')}}';">Click Me</button> -->
-					<!-- </form> -->
-					<div class="row">
-						<div class="col-xl-6 col-xxl-5 d-flex">
-							<div class="w-100">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col mt-0">
-														<h5 class="card-title">Events Held</h5>
-													</div>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{url_for('donations')}}">
+                <i class="align-middle" data-feather="book"></i> <span class="align-middle">Donations</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-													<div class="col-auto">
-														<div class="stat text-primary">
-															<i class="align-middle" data-feather="check-circle"></i>
-														</div>
-													</div>
-												</div>
-												<h1 class="mt-1 mb-3">150</h1>
-												<div class="mb-0">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> +15 </span>
-													<span class="text-muted">Since last year</span>
-												</div>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col mt-0">
-														<h5 class="card-title">Total Homeless</h5>
-													</div>
+      <div class="main">
+        <nav class="navbar navbar-expand navbar-light navbar-bg">
+          <a class="sidebar-toggle js-sidebar-toggle">
+            <i class="hamburger align-self-center"></i>
+          </a>
+          <div class="navbar-collapse collapse">
+            <ul class="navbar-nav navbar-align">
+              <li class="nav-item dropdown">
+                <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                  <i class="align-middle" data-feather="settings"></i>
+                </a>
 
-													<div class="col-auto">
-														<div class="stat text-primary">
-															<i class="align-middle" data-feather="users"></i>
-														</div>
-													</div>
-												</div>
-												<h1 class="mt-1 mb-3">41290</h1>
-												<div class="mb-0">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> -37.84% </span>
-													<span class="text-muted">since last year</span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col mt-0">
-														<h5 class="card-title">Donations</h5>
-													</div>
+                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                  <img src="{{ url_for('static',filename='img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Kabir Singh" /> <span class="text-dark">Kabir Singh</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                  <a class="dropdown-item" href="{{ url_for('profile') }}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+                  <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('dashboard') }}"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+                  <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url_for('index')}}">Log out</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-													<div class="col-auto">
-														<div class="stat text-primary">
-															<i class="align-middle" data-feather="dollar-sign"></i>
-														</div>
-													</div>
-												</div>
-												<h1 class="mt-1 mb-3">$1.50 mn</h1>
-												<div class="mb-0">
-													<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> +6.65% </span>
-													<span class="text-muted">Since last year</span>
-												</div>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card-body">
-												<div class="row">
-													<div class="col mt-0">
-														<h5 class="card-title">Shelter Capacity</h5>
-													</div>
+        <main class="content">
+          <div class="container-fluid p-0">
 
-													<div class="col-auto">
-														<div class="stat text-primary">
-															<i class="align-middle" data-feather="home"></i>
-														</div>
-													</div>
-												</div>
-												<h1 class="mt-1 mb-3">64</h1>
-												<div class="mb-0">
-													<span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> 67% </span>
-													<span class="text-muted">Shelter space filled</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+            <h1 class="h3 mb-3"><strong>My</strong> Dashboard</h1>
+            <!-- <form name="myForm" action = "/grantaccess" method = post onsubmit="return validateForm()"> -->
+            <!-- <button type="button" onclick="window.location.href='{{url_for('location', zipCode='90007')}}';">Click Me</button> -->
+            <!-- </form> -->
+            <div class="row">
+              <div class="col-xl-6 col-xxl-5 d-flex">
+                <div class="w-100">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col mt-0">
+                              <h5 class="card-title">Events Held</h5>
+                            </div>
 
-						<div class="col-xl-6 col-xxl-7">
-							<div class="card flex-fill w-100">
-								<div class="card-header">
+                            <div class="col-auto">
+                              <div class="stat text-primary">
+                                <i class="align-middle" data-feather="check-circle"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <h1 class="mt-1 mb-3">150</h1>
+                          <div class="mb-0">
+                            <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> +15 </span>
+                            <span class="text-muted">Since last year</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col mt-0">
+                              <h5 class="card-title">Total Homeless</h5>
+                            </div>
 
-									<h5 class="card-title mb-0">Change in Homeless Population</h5>
-								</div>
-								<div class="card-body py-3">
-									<div class="chart chart-sm">
-										<canvas id="chartjs-dashboard-line"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+                            <div class="col-auto">
+                              <div class="stat text-primary">
+                                <i class="align-middle" data-feather="users"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <h1 class="mt-1 mb-3">41290</h1>
+                          <div class="mb-0">
+                            <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> -37.84% </span>
+                            <span class="text-muted">since last year</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col mt-0">
+                              <h5 class="card-title">Donations</h5>
+                            </div>
 
-					<div class="row">
-						<div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-3">
-							<div class="card flex-fill w-100">
-								<div class="card-header">
+                            <div class="col-auto">
+                              <div class="stat text-primary">
+                                <i class="align-middle" data-feather="dollar-sign"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <h1 class="mt-1 mb-3">$1.50 mn</h1>
+                          <div class="mb-0">
+                            <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> +6.65% </span>
+                            <span class="text-muted">Since last year</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col mt-0">
+                              <h5 class="card-title">Shelter Capacity</h5>
+                            </div>
 
-									<h5 class="card-title mb-0">Zonewise Distribution</h5>
-								</div>
-								<div class="card-body d-flex">
-									<div class="align-self-center w-100">
-										<div class="py-3">
-											<div class="chart chart-xs">
-												<canvas id="chartjs-dashboard-pie"></canvas>
-											</div>
-										</div>
+                            <div class="col-auto">
+                              <div class="stat text-primary">
+                                <i class="align-middle" data-feather="home"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <h1 class="mt-1 mb-3">64</h1>
+                          <div class="mb-0">
+                            <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> 67% </span>
+                            <span class="text-muted">Shelter space filled</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-										<table class="table mb-0">
-											<tbody>
-												<tr>
-													<td>Zone 1</td>
-													<td class="text-end">15541</td>
-												</tr>
-												<tr>
-													<td>Zone 2</td>
-													<td class="text-end">13982</td>
-												</tr>
-												<tr>
-													<td>Zone 3</td>
-													<td class="text-end">11767</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-md-12 col-xxl-6 d-flex order-3 order-xxl-2">
-							<div class="card flex-fill w-100">
-								<div class="card-header">
+              <div class="col-xl-6 col-xxl-7">
+                <div class="card flex-fill w-100">
+                  <div class="card-header">
 
-									<h5 class="card-title mb-0">Real-Time</h5>
-								</div>
-								<div class="card-body px-4">
-									<div id="default_map" style="height:350px;"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
-							<div class="card flex-fill">
-								<div class="card-header">
+                    <h5 class="card-title mb-0">Change in Homeless Population</h5>
+                  </div>
+                  <div class="card-body py-3">
+                    <div class="chart chart-sm">
+                      <canvas id="chartjs-dashboard-line"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-									<h5 class="card-title mb-0">Events Calendar</h5>
-								</div>
-								<div class="card-body d-flex">
-									<div class="align-self-center w-100">
-										<div class="chart">
-											<div id="datetimepicker-dashboard"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+            <div class="row">
+              <div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-3">
+                <div class="card flex-fill w-100">
+                  <div class="card-header">
 
-					<div class="row">
-						<div class="col-12 col-lg-8 col-xxl-12 d-flex">
-							<div class="card flex-fill">
-								<div class="card-header">
+                    <h5 class="card-title mb-0">Zonewise Distribution</h5>
+                  </div>
+                  <div class="card-body d-flex">
+                    <div class="align-self-center w-100">
+                      <div class="py-3">
+                        <div class="chart chart-xs">
+                          <canvas id="chartjs-dashboard-pie"></canvas>
+                        </div>
+                      </div>
 
-									<h5 class="card-title mb-0">Latest Events</h5>
-								</div>
-								<table class="table table-hover my-0">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th class="d-none d-xl-table-cell">Event Date</th>
-											<!-- <th class="d-none d-xl-table-cell">End Date</th> -->
-											<th>Status</th>
-											<th class="d-none d-md-table-cell">Assignee</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Mental Health Assessment</td>
-											<td class="d-none d-xl-table-cell">11/14/2021</td>
-											<!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
-											<td><span class="badge bg-warning">In progress</span></td>
-											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
-										</tr>
-										<tr>
-											<td>Health Check-Up</td>
-											<td class="d-none d-xl-table-cell">11/12/2021</td>
-											<!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Sharon Lessman</td>
-										</tr>
-										<tr>
-											<td>Food For All - Initiative</td>
-											<td class="d-none d-xl-table-cell">11/04/2021</td>
-											<!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
-											<td><span class="badge bg-danger">Cancelled</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
-										<tr>
-											<td>Clothes For All - Initiative</td>
-											<td class="d-none d-xl-table-cell">11/02/2021</td>
-											<!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Vanessa Tucker</td>
-										</tr>
-										<tr>
-											<td>Food For All - Initiative</td>
-											<td class="d-none d-xl-table-cell">10/23/2021</td>
-											<!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Christina Mason</td>
-										</tr>
-										<tr>
-											<td>Health Check-Up</td>
-											<td class="d-none d-xl-table-cell">10/21/2021</td>
-											<!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">Sharon Lessman</td>
-										</tr>
-										<tr>
-											<td>Clothes For All - Initiative</td>
-											<td class="d-none d-xl-table-cell">10/05/2021</td>
-											<!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
-										<tr>
-											<td>Mental Health Assessment</td>
-											<td class="d-none d-xl-table-cell">10/01/2021</td>
-											<!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
-											<td><span class="badge bg-success">Done</span></td>
-											<td class="d-none d-md-table-cell">William Harris</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<!-- <div class="col-12 col-lg-4 col-xxl-3 d-flex">
+                      <table class="table mb-0">
+                        <tbody>
+                          <tr>
+                            <td>Zone 1</td>
+                            <td class="text-end">15541</td>
+                          </tr>
+                          <tr>
+                            <td>Zone 2</td>
+                            <td class="text-end">13982</td>
+                          </tr>
+                          <tr>
+                            <td>Zone 3</td>
+                            <td class="text-end">11767</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-12 col-xxl-6 d-flex order-3 order-xxl-2">
+                <div class="card flex-fill w-100">
+                  <div class="card-header">
+
+                    <h5 class="card-title mb-0">Real-Time</h5>
+                  </div>
+                  <div class="card-body px-4">
+                    <div id="default_map" style="height:350px;"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
+                <div class="card flex-fill">
+                  <div class="card-header">
+
+                    <h5 class="card-title mb-0">Events Calendar</h5>
+                  </div>
+                  <div class="card-body d-flex">
+                    <div class="align-self-center w-100">
+                      <div class="chart">
+                        <div id="datetimepicker-dashboard"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-lg-8 col-xxl-12 d-flex">
+                <div class="card flex-fill">
+                  <div class="card-header">
+
+                    <h5 class="card-title mb-0">Latest Events</h5>
+                  </div>
+                  <table class="table table-hover my-0">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th class="d-none d-xl-table-cell">Event Date</th>
+                        <!-- <th class="d-none d-xl-table-cell">End Date</th> -->
+                        <th>Status</th>
+                        <th class="d-none d-md-table-cell">Assignee</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mental Health Assessment</td>
+                        <td class="d-none d-xl-table-cell">11/14/2021</td>
+                        <!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
+                        <td><span class="badge bg-warning">In progress</span></td>
+                        <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+                      </tr>
+                      <tr>
+                        <td>Health Check-Up</td>
+                        <td class="d-none d-xl-table-cell">11/12/2021</td>
+                        <!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
+                        <td><span class="badge bg-success">Done</span></td>
+                        <td class="d-none d-md-table-cell">Sharon Lessman</td>
+                      </tr>
+                      <tr>
+                        <td>Food For All - Initiative</td>
+                        <td class="d-none d-xl-table-cell">11/04/2021</td>
+                        <!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
+                        <td><span class="badge bg-danger">Cancelled</span></td>
+                        <td class="d-none d-md-table-cell">William Harris</td>
+                      </tr>
+                      <tr>
+                        <td>Clothes For All - Initiative</td>
+                        <td class="d-none d-xl-table-cell">11/02/2021</td>
+                        <!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
+                        <td><span class="badge bg-success">Done</span></td>
+                        <td class="d-none d-md-table-cell">Vanessa Tucker</td>
+                      </tr>
+                      <tr>
+                        <td>Food For All - Initiative</td>
+                        <td class="d-none d-xl-table-cell">10/23/2021</td>
+                        <!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
+                        <td><span class="badge bg-success">Done</span></td>
+                        <td class="d-none d-md-table-cell">Christina Mason</td>
+                      </tr>
+                      <tr>
+                        <td>Health Check-Up</td>
+                        <td class="d-none d-xl-table-cell">10/21/2021</td>
+                        <!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
+                        <td><span class="badge bg-success">Done</span></td>
+                        <td class="d-none d-md-table-cell">Sharon Lessman</td>
+                      </tr>
+                      <tr>
+                        <td>Clothes For All - Initiative</td>
+                        <td class="d-none d-xl-table-cell">10/05/2021</td>
+                        <!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
+                        <td><span class="badge bg-success">Done</span></td>
+                        <td class="d-none d-md-table-cell">William Harris</td>
+                      </tr>
+                      <tr>
+                        <td>Mental Health Assessment</td>
+                        <td class="d-none d-xl-table-cell">10/01/2021</td>
+                        <!-- <td class="d-none d-xl-table-cell">31/06/2021</td> -->
+                        <td><span class="badge bg-success">Done</span></td>
+                        <td class="d-none d-md-table-cell">William Harris</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- <div class="col-12 col-lg-4 col-xxl-3 d-flex">
 							<div class="card flex-fill w-100">
 								<div class="card-header">
 
@@ -357,481 +357,419 @@
 								</div>
 							</div>
 						</div> -->
-					</div>
+            </div>
 
-				</div>
-			</main>
+          </div>
+        </main>
 
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="https://github.com/abhay-iy97/trojan-hacks" target="_blank"><strong>Helping Hands</strong></a> &copy;
-							</p>
-						</div>
-						<div class="col-6 text-end">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
-	</div>
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row text-muted">
+              <div class="col-6 text-start">
+                <p class="mb-0">
+                  <a class="text-muted" href="https://github.com/abhay-iy97/trojan-hacks" target="_blank"><strong>Helping Hands</strong></a> &copy;
+                </p>
+              </div>
+              <div class="col-6 text-end">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
 
-	<script src="{{ url_for('static',filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/app.js') }}"></script>
 
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
-			var gradient = ctx.createLinearGradient(0, 0, 0, 225);
-			gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
-			gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
-			// Line chart
-			new Chart(document.getElementById("chartjs-dashboard-line"), {
-				type: "line",
-				data: {
-					labels: ["2015", "2016", "2017", "2018", "2019", "2020", "2021"],
-					datasets: [{
-						label: "Population",
-						fill: true,
-						backgroundColor: gradient,
-						borderColor: window.theme.primary,
-						data: [
-							44359,
-							46874,
-							48287,
-							52633,
-							58949,
-							66436,
-							41290,
-						]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					tooltips: {
-						intersect: false
-					},
-					hover: {
-						intersect: true
-					},
-					plugins: {
-						filler: {
-							propagate: false
-						}
-					},
-					scales: {
-						xAxes: [{
-							reverse: true,
-							gridLines: {
-								color: "rgba(0,0,0,0.0)"
-							}
-						}],
-						yAxes: [{
-							ticks: {
-								stepSize: 10000
-							},
-							display: true,
-							borderDash: [3, 3],
-							gridLines: {
-								color: "rgba(0,0,0,0.0)"
-							}
-						}]
-					}
-				}
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Pie chart
-			new Chart(document.getElementById("chartjs-dashboard-pie"), {
-				type: "pie",
-				data: {
-					labels: ["Zone 1", "Zone 2", "Zone 3"],
-					datasets: [{
-						data: [15541, 13982, 11767],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.warning,
-							window.theme.danger
-						],
-						borderWidth: 5
-					}]
-				},
-				options: {
-					responsive: !window.MSInputMethodContext,
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					cutoutPercentage: 75
-				}
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Bar chart
-			new Chart(document.getElementById("chartjs-dashboard-bar"), {
-				type: "bar",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "This year",
-						backgroundColor: window.theme.primary,
-						borderColor: window.theme.primary,
-						hoverBackgroundColor: window.theme.primary,
-						hoverBorderColor: window.theme.primary,
-						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-						barPercentage: .75,
-						categoryPercentage: .5
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					scales: {
-						yAxes: [{
-							gridLines: {
-								display: false
-							},
-							stacked: false,
-							ticks: {
-								stepSize: 20
-							}
-						}],
-						xAxes: [{
-							stacked: false,
-							gridLines: {
-								color: "transparent"
-							}
-						}]
-					}
-				}
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var markers = [{
-					coords: [31.230391, 121.473701],
-					name: "Shanghai"
-				},
-				{
-					coords: [28.704060, 77.102493],
-					name: "Delhi"
-				},
-				{
-					coords: [6.524379, 3.379206],
-					name: "Lagos"
-				},
-				{
-					coords: [35.689487, 139.691711],
-					name: "Tokyo"
-				},
-				{
-					coords: [23.129110, 113.264381],
-					name: "Guangzhou"
-				},
-				{
-					coords: [40.7127837, -74.0059413],
-					name: "New York"
-				},
-				{
-					coords: [34.052235, -118.243683],
-					name: "Los Angeles"
-				},
-				{
-					coords: [41.878113, -87.629799],
-					name: "Chicago"
-				},
-				{
-					coords: [51.507351, -0.127758],
-					name: "London"
-				},
-				{
-					coords: [40.416775, -3.703790],
-					name: "Madrid "
-				}
-			];
-			var map = new jsVectorMap({
-				map: "world",
-				selector: "#world_map",
-				zoomButtons: true,
-				markers: markers,
-				markerStyle: {
-					initial: {
-						r: 9,
-						strokeWidth: 7,
-						stokeOpacity: .4,
-						fill: window.theme.primary
-					},
-					hover: {
-						fill: window.theme.primary,
-						stroke: window.theme.primary
-					}
-				},
-				zoomOnScroll: false
-			});
-			window.addEventListener("resize", () => {
-				map.updateSize();
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
-			var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-			document.getElementById("datetimepicker-dashboard").flatpickr({
-				inline: true,
-				prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-				nextArrow: "<span title=\"Next month\">&raquo;</span>",
-				defaultDate: ['2021-11-14', '2021-11-12', '2021-11-04', '2021-11-02', '2021-10-05', '2021-10-23', '2021-10-21', '2021-10-01',],
-				mode: "multiple"
-			});
-		});
-	</script>
-
-
-<script>
-	var values = JSON.parse('{{result|tojson}}');
-	console.log(values);
-	const citymap = {
-		museum: {
-			center: { lat: 34.06842217402775 , lng: -118.36151149024859 },
-			radius: 1700,
-
-		},
-		newyork: {
-			center: { lat: 40.714, lng: -74.005 },
-			radius: 84051,
-		},
-		losangeles: {
-			center: { lat: 34.02740062940116 , lng: -118.2838394088855},
-			radius: 2000,
-		},
-		vancouver: {
-			center: { lat: 49.25, lng: -123.1 },
-			radius: 60311,
-		},
-		};
-	function initMaps() {
-		var defaultMap = {
-			zoom: 11,
-			center: {
-				lat: 34.023824531798105,
-				lng: -118.28401851974486
-				//34.023824531798105, -118.28401851974486
-			},
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-		};
-		let map = new google.maps.Map(document.getElementById("default_map"), defaultMap);
-		// map.data.loadGeoJson(
-		// "https://github.com/Supercool1604/AI/blob/master/Zip_Codes_(LA_County).geojson"
-		  // );
-	// 	  var featureStyle = {
-	// 	strokeColor: '#ff3333',
-	// 	strokeWeight: 4
-	// }
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+        var gradient = ctx.createLinearGradient(0, 0, 0, 225);
+        gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+        gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+        // Line chart
+        new Chart(document.getElementById("chartjs-dashboard-line"), {
+          type: "line",
+          data: {
+            labels: ["2015", "2016", "2017", "2018", "2019", "2020", "2021"],
+            datasets: [{
+              label: "Population",
+              fill: true,
+              backgroundColor: gradient,
+              borderColor: window.theme.primary,
+              data: [
+                44359,
+                46874,
+                48287,
+                52633,
+                58949,
+                66436,
+                41290,
+              ]
+            }]
+          },
+          options: {
+            maintainAspectRatio: false,
+            legend: {
+              display: false
+            },
+            tooltips: {
+              intersect: false
+            },
+            hover: {
+              intersect: true
+            },
+            plugins: {
+              filler: {
+                propagate: false
+              }
+            },
+            scales: {
+              xAxes: [{
+                reverse: true,
+                gridLines: {
+                  color: "rgba(0,0,0,0.0)"
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  stepSize: 10000
+                },
+                display: true,
+                borderDash: [3, 3],
+                gridLines: {
+                  color: "rgba(0,0,0,0.0)"
+                }
+              }]
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Pie chart
+        new Chart(document.getElementById("chartjs-dashboard-pie"), {
+          type: "pie",
+          data: {
+            labels: ["Zone 1", "Zone 2", "Zone 3"],
+            datasets: [{
+              data: [15541, 13982, 11767],
+              backgroundColor: [
+                window.theme.primary,
+                window.theme.warning,
+                window.theme.danger
+              ],
+              borderWidth: 5
+            }]
+          },
+          options: {
+            responsive: !window.MSInputMethodContext,
+            maintainAspectRatio: false,
+            legend: {
+              display: false
+            },
+            cutoutPercentage: 75
+          }
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Bar chart
+        new Chart(document.getElementById("chartjs-dashboard-bar"), {
+          type: "bar",
+          data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [{
+              label: "This year",
+              backgroundColor: window.theme.primary,
+              borderColor: window.theme.primary,
+              hoverBackgroundColor: window.theme.primary,
+              hoverBorderColor: window.theme.primary,
+              data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+              barPercentage: .75,
+              categoryPercentage: .5
+            }]
+          },
+          options: {
+            maintainAspectRatio: false,
+            legend: {
+              display: false
+            },
+            scales: {
+              yAxes: [{
+                gridLines: {
+                  display: false
+                },
+                stacked: false,
+                ticks: {
+                  stepSize: 20
+                }
+              }],
+              xAxes: [{
+                stacked: false,
+                gridLines: {
+                  color: "transparent"
+                }
+              }]
+            }
+          }
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var markers = [{
+            coords: [31.230391, 121.473701],
+            name: "Shanghai"
+          },
+          {
+            coords: [28.704060, 77.102493],
+            name: "Delhi"
+          },
+          {
+            coords: [6.524379, 3.379206],
+            name: "Lagos"
+          },
+          {
+            coords: [35.689487, 139.691711],
+            name: "Tokyo"
+          },
+          {
+            coords: [23.129110, 113.264381],
+            name: "Guangzhou"
+          },
+          {
+            coords: [40.7127837, -74.0059413],
+            name: "New York"
+          },
+          {
+            coords: [34.052235, -118.243683],
+            name: "Los Angeles"
+          },
+          {
+            coords: [41.878113, -87.629799],
+            name: "Chicago"
+          },
+          {
+            coords: [51.507351, -0.127758],
+            name: "London"
+          },
+          {
+            coords: [40.416775, -3.703790],
+            name: "Madrid "
+          }
+        ];
+        var map = new jsVectorMap({
+          map: "world",
+          selector: "#world_map",
+          zoomButtons: true,
+          markers: markers,
+          markerStyle: {
+            initial: {
+              r: 9,
+              strokeWidth: 7,
+              stokeOpacity: .4,
+              fill: window.theme.primary
+            },
+            hover: {
+              fill: window.theme.primary,
+              stroke: window.theme.primary
+            }
+          },
+          zoomOnScroll: false
+        });
+        window.addEventListener("resize", () => {
+          map.updateSize();
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
+        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+        document.getElementById("datetimepicker-dashboard").flatpickr({
+          inline: true,
+          prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+          nextArrow: "<span title=\"Next month\">&raquo;</span>",
+          defaultDate: ['2021-11-14', '2021-11-12', '2021-11-04', '2021-11-02', '2021-10-05', '2021-10-23', '2021-10-21', '2021-10-01', ],
+          mode: "multiple"
+        });
+      });
+    </script>
 
 
+    <script>
+      var values = JSON.parse('{{result|tojson}}');
+      console.log(values);
+      const citymap = {
+        museum: {
+          center: {
+            lat: 34.06842217402775,
+            lng: -118.36151149024859
+          },
+          radius: 1700,
 
-	/**
-	 * Checking dor data from the database.	
-	 *	Only for testing purposes
-	 */
-	var count = 0;
+        },
+        newyork: {
+          center: {
+            lat: 40.714,
+            lng: -74.005
+          },
+          radius: 84051,
+        },
+        losangeles: {
+          center: {
+            lat: 34.02740062940116,
+            lng: -118.2838394088855
+          },
+          radius: 2000,
+        },
+        vancouver: {
+          center: {
+            lat: 49.25,
+            lng: -123.1
+          },
+          radius: 60311,
+        },
+      };
 
-	for (const val in values) {
-// Add the circle for this city to the map.
-			console.log(values[val][4] < 33.9);
-			console.log(val);
-			var zipCode = values[val][0];
-			var centerNew = {lat: values[val][4], lng: values[val][5]};
-			// $("#target").text(zipCode);
-
-			// window.onload = function() {
-				//when the document is finished loading, replace everything
-				//between the <a ...> </a> tags with the value of splitText
-			// document.getElementById("target").innerHTML=zipCode;
-			// } 
-			var contentString;
-		
-				console.log("here")
-				contentString = '<div id="content"> ' +
-							'<div id="siteNotice">' +
-							"</div>" +
-							'<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
-							'<div id="bodyContent">' +
-							"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 15541</h4>\n" +
-							"<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
-							"</div>" +
-							"</div>";
-			
-			{
-			var contentString2 = '<div id="content"> ' +
-							'<div id="siteNotice">' +
-							"</div>" +
-							'<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
-							'<div id="bodyContent">' +
-							"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 13982</h4>\n" +
-							"<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
-							"</div>" +
-							"</div>";
-			}
-			
-			var	contentString3 = '<div id="content"> ' +
-							'<div id="siteNotice">' +
-							"</div>" +
-							'<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
-							'<div id="bodyContent">' +
-							"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 11767</h4>\n" +
-							"<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
-							"</div>" +
-							"</div>";
-			
-			count = count + 1;
-			const cityCircle = new google.maps.Circle({
-			// strokeColor: "green",
-			// strokeOpacity: 0.8,
-			strokeWeight: 2,
-			fillColor: "red",
-			// fillOpacity: 0.35,
-			map,
-			center: centerNew,
-			radius: values[val][3],
-			// url: ""
-			});
-			// var infowindow = new google.maps.InfoWindow({
-			// content: contentString,
-			// });
-			// infowindow[city] = new google.maps.InfoWindow({
-			  // content: citymap[city].radius;
-		   //  });
-			// cityCircle.addListener("click", () => {
-			// 	infowindow.open({
-			// anchor: cityCircle,
-			// map,
-			// shouldFocus: true,
-			// });
-			// });
-			// var Loc = new google.maps.LatLng(city.center.lat,city.center.lng);
-			var INFO_WINDOW_WIDTH = 352;                                
-			var infowindow = new google.maps.InfoWindow({
-			// position :Loc,
-			maxWidth: INFO_WINDOW_WIDTH
-			});
-
-			google.maps.event.addListener(cityCircle, 'click', function(ev){
-			infowindow.close();
-			infowindow.setPosition(cityCircle.getCenter());
-			infowindow.open(map);
-			if(cityCircle.radius==2000)
-				infowindow.setContent(contentString);
-			else if (cityCircle.radius==2000)
-				infowindow.setContent(contentString2);
-			else
-				infowindow.setContent(contentString3);
-			})
-		};
+      function initMaps() {
+        var defaultMap = {
+          zoom: 11,
+          center: {
+            lat: 34.023824531798105,
+            lng: -118.28401851974486
+            //34.023824531798105, -118.28401851974486
+          },
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+        };
+        let map = new google.maps.Map(document.getElementById("default_map"), defaultMap);
+        // map.data.loadGeoJson(
+        // "https://github.com/Supercool1604/AI/blob/master/Zip_Codes_(LA_County).geojson"
+        // );
+        // 	  var featureStyle = {
+        // 	strokeColor: '#ff3333',
+        // 	strokeWeight: 4
+        // }
 
 
 
+        /**
+         * Checking dor data from the database.	
+         *	Only for testing purposes
+         */
+        var count = 0;
 
+        for (const val in values) {
+          // Add the circle for this city to the map.
+          console.log(values[val][4] < 33.9);
+          console.log(val);
+          var zipCode = values[val][0];
+          var centerNew = {
+            lat: values[val][4],
+            lng: values[val][5]
+          };
+          // $("#target").text(zipCode);
 
+          // window.onload = function() {
+          //when the document is finished loading, replace everything
+          //between the <a ...> </a> tags with the value of splitText
+          // document.getElementById("target").innerHTML=zipCode;
+          // } 
+          var contentString;
 
+          console.log("here")
+          contentString = '<div id="content"> ' +
+            '<div id="siteNotice">' +
+            "</div>" +
+            '<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
+            '<div id="bodyContent">' +
+            "<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 15541</h4>\n" +
+            "<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
+            "</div>" +
+            "</div>";
 
+          {
+            var contentString2 = '<div id="content"> ' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
+              '<div id="bodyContent">' +
+              "<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 13982</h4>\n" +
+              "<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
+              "</div>" +
+              "</div>";
+          }
 
+          var contentString3 = '<div id="content"> ' +
+            '<div id="siteNotice">' +
+            "</div>" +
+            '<h1 id="target" class="firstHeading">Details of Los Angeles County, CA</h1> \n' +
+            '<div id="bodyContent">' +
+            "<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area, with count 11767</h4>\n" +
+            "<h4> Click <a href = '' >here</a> to see all the past and future events. </h4>\n" +
+            "</div>" +
+            "</div>";
 
+          count = count + 1;
+          const cityCircle = new google.maps.Circle({
+            // strokeColor: "green",
+            // strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "red",
+            // fillOpacity: 0.35,
+            map,
+            center: centerNew,
+            radius: values[val][3],
+            // url: ""
+          });
+          // var infowindow = new google.maps.InfoWindow({
+          // content: contentString,
+          // });
+          // infowindow[city] = new google.maps.InfoWindow({
+          // content: citymap[city].radius;
+          //  });
+          // cityCircle.addListener("click", () => {
+          // 	infowindow.open({
+          // anchor: cityCircle,
+          // map,
+          // shouldFocus: true,
+          // });
+          // });
+          // var Loc = new google.maps.LatLng(city.center.lat,city.center.lng);
+          var INFO_WINDOW_WIDTH = 352;
+          var infowindow = new google.maps.InfoWindow({
+            // position :Loc,
+            maxWidth: INFO_WINDOW_WIDTH
+          });
 
-
-
-
-
-
-
-
-		// for (const city in citymap) {
-		// 	var contentString = '<div id="content"> ' +
-		// 					'<div id="siteNotice">' +
-		// 					"</div>" +
-		// 					'<h1 id="firstHeading" class="firstHeading">Details</h1> \n' +
-		// 					'<div id="bodyContent">' +
-		// 					"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area</h4>\n" +
-		// 					"<h4> Click <a href = '' >here</a> to see all the upcoming events. </h4>\n" +
-		// 					"<h4> Click <a href ='' >here </a> to send an SMS to everyone in need. </h4>\n " 
-		// 					"</div>" +
-		// 					"</div>";
-		// 	const cityCircle = new google.maps.Circle({
-			
-		// 	strokeWeight: 2,
-		// 	fillColor: "red",
-		
-		// 	map,
-		// 	center: citymap[city].center,
-		// 	radius: citymap[city].radius,
-		// 	// url: ""
-		// 	});
-		// 	// var infowindow = new google.maps.InfoWindow({
-		// 	// content: contentString,
-		// 	// });
-		// 	// infowindow[city] = new google.maps.InfoWindow({
-		  // 	// content: citymap[city].radius;
-		   // //  });
-		// 	// cityCircle.addListener("click", () => {
-		// 	// 	infowindow.open({
-		// 	// anchor: cityCircle,
-		// 	// map,
-		// 	// shouldFocus: true,
-		// 	// });
-		// 	// });
-		// 	// var Loc = new google.maps.LatLng(city.center.lat,city.center.lng);
-		// 	var INFO_WINDOW_WIDTH = 352;                                
-		// 	var infowindow = new google.maps.InfoWindow({
-		// 	// position :Loc,
-		// 	maxWidth: INFO_WINDOW_WIDTH
-		// 	});
-
-		// 	google.maps.event.addListener(cityCircle, 'click', function(ev){
-		// 	infowindow.setPosition(cityCircle.getCenter());
-		// 	infowindow.open(map);
-		// 	infowindow.setContent(contentString);
-		// 	})
-		// };
-
-		var hybridMap = {
-			zoom: 14,
-			center: {
-				lat: 40.712784,
-				lng: -74.005941
-			},
-			mapTypeId: google.maps.MapTypeId.HYBRID
-		};
-		new google.maps.Map(document.getElementById("hybrid_map"), hybridMap);
-	}
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7fQCTLASDJSuJjurgQHdgfLDtt2V55VY&callback=initMaps" async defer></script>
+          google.maps.event.addListener(cityCircle, 'click', function(ev) {
+            infowindow.close();
+            infowindow.setPosition(cityCircle.getCenter());
+            infowindow.open(map);
+            if (cityCircle.radius == 2000)
+              infowindow.setContent(contentString);
+            else if (cityCircle.radius == 2000)
+              infowindow.setContent(contentString2);
+            else
+              infowindow.setContent(contentString3);
+          })
+        };
 
 
 
@@ -840,6 +778,75 @@
 
 
 
-</body>
 
+
+
+
+
+
+
+
+
+        // for (const city in citymap) {
+        // 	var contentString = '<div id="content"> ' +
+        // 					'<div id="siteNotice">' +
+        // 					"</div>" +
+        // 					'<h1 id="firstHeading" class="firstHeading">Details</h1> \n' +
+        // 					'<div id="bodyContent">' +
+        // 					"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area</h4>\n" +
+        // 					"<h4> Click <a href = '' >here</a> to see all the upcoming events. </h4>\n" +
+        // 					"<h4> Click <a href ='' >here </a> to send an SMS to everyone in need. </h4>\n " 
+        // 					"</div>" +
+        // 					"</div>";
+        // 	const cityCircle = new google.maps.Circle({
+
+        // 	strokeWeight: 2,
+        // 	fillColor: "red",
+
+        // 	map,
+        // 	center: citymap[city].center,
+        // 	radius: citymap[city].radius,
+        // 	// url: ""
+        // 	});
+        // 	// var infowindow = new google.maps.InfoWindow({
+        // 	// content: contentString,
+        // 	// });
+        // 	// infowindow[city] = new google.maps.InfoWindow({
+        // 	// content: citymap[city].radius;
+        // //  });
+        // 	// cityCircle.addListener("click", () => {
+        // 	// 	infowindow.open({
+        // 	// anchor: cityCircle,
+        // 	// map,
+        // 	// shouldFocus: true,
+        // 	// });
+        // 	// });
+        // 	// var Loc = new google.maps.LatLng(city.center.lat,city.center.lng);
+        // 	var INFO_WINDOW_WIDTH = 352;                                
+        // 	var infowindow = new google.maps.InfoWindow({
+        // 	// position :Loc,
+        // 	maxWidth: INFO_WINDOW_WIDTH
+        // 	});
+
+        // 	google.maps.event.addListener(cityCircle, 'click', function(ev){
+        // 	infowindow.setPosition(cityCircle.getCenter());
+        // 	infowindow.open(map);
+        // 	infowindow.setContent(contentString);
+        // 	})
+        // };
+
+        var hybridMap = {
+          zoom: 14,
+          center: {
+            lat: 40.712784,
+            lng: -74.005941
+          },
+          mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+        new google.maps.Map(document.getElementById("hybrid_map"), hybridMap);
+      }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7fQCTLASDJSuJjurgQHdgfLDtt2V55VY&callback=initMaps" async defer></script>
+  </body>
 </html>

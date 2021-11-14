@@ -100,7 +100,7 @@ def addEvent():
     time = request.args.get('event_time')
     date = request.args.get('event_date')
     venue = request.args.get('event_venue')
-    return name
+    return render_template('event_created.html')
 
 @app.route('/maps', methods=['POST', 'GET'])
 def maps():
@@ -125,6 +125,9 @@ def authorityAccess():
     count = 41290
     return render_template('dashboardAuthority.html', result = results, count = count )
 
+@app.route('/donated', methods=['POST', 'GET'])
+def donated():
+    return render_template('donated.html')
 
 def cancelEvent():
     pass
