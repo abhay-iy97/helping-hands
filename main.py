@@ -2,6 +2,8 @@ from flask import Flask, redirect, url_for, render_template, request
 import requests
 import urllib
 import pymysql
+from twilio.twiml.messaging_response import MessagingResponse
+from twilio.rest import Client
 
 #initalizing flask app
 app = Flask("__name__")
@@ -13,6 +15,9 @@ app.secret_key = 'my secret and not your secret'
 #     return render_template("about.html")
 
 db = pymysql.connect(host="sql3.freemysqlhosting.net", user="sql3450941", password="I1TIEzd82P", database="sql3450941")
+account_sid = 'ACe656e62dfa83c630b54d7c877ac48100'
+auth_token = 'xxx'  #change to correct token here
+client = Client(account_sid, auth_token)
 # @app.route('/aboutus')
 # def about():
 #     return render_template("about.html")
@@ -100,7 +105,34 @@ def addEvent():
     time = request.args.get('event_time')
     date = request.args.get('event_date')
     venue = request.args.get('event_venue')
+    # Numbers from db in the same zipcode
+    numbers_to_message = ['+12028094943']
+    for number in numbers_to_message:
+        message = client.messages \
+            .create(
+            body='Event ' + str(name) + ' near You. Please reply Yes to confirm. Otherwise ignore.',
+            from_='+14158911938',
+            to=number
+        )
+
+    #     # print(message.sid)
+    #     # return message.status
+
     return render_template('event_created.html')
+
+
+@app.route("/smsreply", methods=['GET', 'POST'])
+def sms_reply():
+    """Respond to incoming calls with a simple text message."""
+    body = request.values.get('Body', None)
+    # Start our TwiML response
+    resp = MessagingResponse()
+
+    # Add a message
+    if body == 'Yes':
+        resp.message("Thank You for your registration.")
+
+    return str(resp)
 
 @app.route('/maps', methods=['POST', 'GET'])
 def maps():
