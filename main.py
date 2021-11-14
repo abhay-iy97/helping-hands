@@ -1,11 +1,18 @@
 from flask import Flask, redirect, url_for, render_template, request
+import requests
+import urllib
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
 import pymysql
 
 #initalizing flask app
 app = Flask(__name__)
-app.secret_key = 'my secret and not your secret'
+app.secret_key = 'my secret is my secret none of your secret'
+
+db = pymysql.connect(host="sql3.freemysqlhosting.net", user="sql3450941", password="I1TIEzd82P", database="sql3450941")
+account_sid = 'ACe656e62dfa83c630b54d7c877ac48100'
+auth_token = 'ab068d7893281856f13c1d185961cc29'
+client = Client(account_sid, auth_token)
 
 
 # @app.route('/aboutus')
@@ -16,6 +23,44 @@ app.secret_key = 'my secret and not your secret'
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/location', methods=['POST', 'GET'])
+def location():
+    print("in location", flush=True)
+    app.logger.info("in location")
+    app.logger.warning("in location")
+    app.logger.error("in location")
+
+    # year = request.args.get('year')
+    zipCode = request.args.get('zipCode')
+    app.logger.warning("zipcode", zipCode)
+    # date = request.args.get('date')
+    url = 'http://dev.virtualearth.net/REST/v1/Locations?' 
+    key = 'Ak7iTQXGfzgqJSIaOPYxLU4VGFA0yiVwXFgFUAhUfEtqBd_SuKzcKMhAmGN2fq9n'
+    cr = 'US'
+    results = url + urllib.parse.urlencode(({'CountryRegion': cr, 'postalCode': zipCode, 'key': key}))
+    response = requests.get(results)
+    print("response : ", response)
+    parser = response.json()
+    auth = parser['statusDescription']
+    if auth == 'OK':
+        # if 'adminDistrict' not in parser['resourceSets'][0]['resources'][0]['address']:
+            # return 'Location does not exist in US! Please try again!'
+        # state = parser['resourceSets'][0]['resources'][0]['address']['adminDistrict']
+        lat = parser['resourceSets'][0]['resources'][0]['point']['coordinates'][0]
+        lon = parser['resourceSets'][0]['resources'][0]['point']['coordinates'][1]
+
+        x1 = parser['resourceSets'][0]['resources'][0]['bbox'][0]
+        y1 = parser['resourceSets'][0]['resources'][0]['bbox'][1]
+        x2 = parser['resourceSets'][0]['resources'][0]['bbox'][2]
+        y2 = parser['resourceSets'][0]['resources'][0]['bbox'][3]
+
+        # app.logger.warn("latitute and longitute", lat, lon, ".")
+        city = parser['resourceSets'][0]['resources'][0]['address']['locality']
+        return redirect(url_for('index', city=city, latitude=lat, longitude=lon))
+    else:  
+        return 'Status: %s! Server issue! Please try again later!' % auth
 
 @app.route('/donorAccess', methods=['POST', 'GET'])
 def login():
@@ -43,57 +88,17 @@ def donations():
 def validation(username, password):
     pass
 
-@app.route('/addEvent')
+@app.route('/addEvent', methods=['POST', 'GET'])
 def addEvent():
-    time = request.args.get('time')
-    date = request.args.get('date')
-    venue = request.args.get('venue')
-    #Call db from here to save this data
+    name = request.args.get('event_name')
+    time = request.args.get('event_time')
+    date = request.args.get('event_date')
+    venue = request.args.get('event_venue')
+    return name
+
 
 def cancelEvent():
     pass
 
 def donate():
     pass
-
-
-@app.route("/sms")
-def sms():
-    account_sid = 'ACe656e62dfa83c630b54d7c877ac48100'
-    auth_token = 'ab068d7893281856f13c1d185961cc29'
-    client = Client(account_sid, auth_token)
-
-    numbers_to_message = ['+12028094943']
-    for number in numbers_to_message:
-        message = client.messages \
-            .create(
-            body='Testing 1..2..3',
-            from_='+14158911938',
-            to=number
-        )
-
-        # print(message.sid)
-        return message.status
-
-
-@app.route("/smsreply", methods=['GET', 'POST'])
-def sms_reply():
-    """Respond to incoming calls with a simple text message."""
-    # Start our TwiML response
-    resp = MessagingResponse()
-
-    # Add a message
-    resp.message("Reply Demo")
-
-    return str(resp)
-
-
-db = pymysql.connect(host="sql3.freemysqlhosting.net", user="sql3450941", password="I1TIEzd82P", database="sql3450941", )
-@app.route("/db")
-def dbs():
-    # db = pymysql.connect("sql3.freemysqlhosting.net", "sql3450941", "I1TIEzd82P", "sql3450941")
-    cursor = db.cursor()
-    sql = "SELECT * FROM Shelters"
-    cursor.execute(sql)
-    results = cursor.fetchall()
-    return str(results)
