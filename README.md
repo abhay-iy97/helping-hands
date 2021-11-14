@@ -1,4 +1,4 @@
-# Project Name - Helping Hands
+# Helping Hands
 
 Hackathon project for Trojan Hacks 2021
 
