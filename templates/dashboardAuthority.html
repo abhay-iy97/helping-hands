@@ -34,81 +34,20 @@
 					</li>
 
 					<li class="sidebar-item active">
-						<a class="sidebar-link"  href="{{ url_for('static',filename='index_adminkit.html') }}">
+						<a class="sidebar-link"  href="{{ url_for('authorityAccess') }}">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='pages-profile.html') }}">
+						<a class="sidebar-link" href="{{ url_for('profile') }}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='pages-sign-in.html') }}">
-              <i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
-            </a>
-					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='pages-sign-up.html') }}">
-              <i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='pages-blank.html') }}">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
-            </a>
-					</li>
-
-					<li class="sidebar-header">
-						Tools & Components
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='ui-buttons.html') }}">
-              <i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='ui-forms.html') }}">
-              <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Forms</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='ui-cards.html') }}">
-              <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='ui-typography.html') }}">
-              <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Typography</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='icons-feather.html') }}">
-              <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
-            </a>
-					</li>
-
-					<li class="sidebar-header">
-						Plugins & Addons
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='charts-chartjs.html') }}">
-              <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ url_for('static',filename='maps-google.html') }}">
+						<a class="sidebar-link" href="{{ url_for('maps') }}">
               <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
             </a>
 					</li>
@@ -277,10 +216,10 @@
                 <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="{{ url_for('static',filename='pages-profile.html') }}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="{{ url_for('profile') }}"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{ url_for('static',filename='index_adminkit.html') }}"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="{{ url_for('authorityAccess') }}"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Log out</a>
@@ -444,7 +383,7 @@
 									<h5 class="card-title mb-0">Real-Time</h5>
 								</div>
 								<div class="card-body px-4">
-									<div id="world_map" style="height:350px;"></div>
+									<div id="default_map" style="height:500px;"></div>
 								</div>
 							</div>
 						</div>
@@ -815,6 +754,218 @@
 		});
 	</script>
 
-</body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	var values = JSON.parse('{{result|tojson}}');
+	console.log(values);
+	const citymap = {
+		museum: {
+			center: { lat: 34.06842217402775 , lng: -118.36151149024859 },
+			radius: 1700,
+
+		},
+		newyork: {
+			center: { lat: 40.714, lng: -74.005 },
+			radius: 84051,
+		},
+		losangeles: {
+			center: { lat: 34.02740062940116 , lng: -118.2838394088855},
+			radius: 2000,
+		},
+		vancouver: {
+			center: { lat: 49.25, lng: -123.1 },
+			radius: 60311,
+		},
+		};
+	function initMaps() {
+		var defaultMap = {
+			zoom: 11,
+			center: {
+				lat: 34.023824531798105,
+				lng: -118.28401851974486
+				//34.023824531798105, -118.28401851974486
+			},
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
+		let map = new google.maps.Map(document.getElementById("default_map"), defaultMap);
+		// map.data.loadGeoJson(
+		// "https://github.com/Supercool1604/AI/blob/master/Zip_Codes_(LA_County).geojson"
+		  // );
+	// 	  var featureStyle = {
+	// 	strokeColor: '#ff3333',
+	// 	strokeWeight: 4
+	// }
+
+
+
+	/**
+	 * Checking dor data from the database.	
+	 *	Only for testing purposes
+	 */
+	for (const val in values) {
+// Add the circle for this city to the map.
+			console.log(values[val][4])
+			console.log(val)
+			var centerNew = {lat: values[val][4], lng: values[val][5]};
+			var contentString = '<div id="content"> ' +
+							'<div id="siteNotice">' +
+							"</div>" +
+							'<h1 id="firstHeading" class="firstHeading">Details of Los Angeles County</h1> \n' +
+							'<div id="bodyContent">' +
+							"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area</h4>\n" +
+							"<h4> Click <a href = '' >here</a> to see all the upcoming events. </h4>\n" +
+							"</div>" +
+							"</div>";
+			const cityCircle = new google.maps.Circle({
+			// strokeColor: "green",
+			// strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: "red",
+			// fillOpacity: 0.35,
+			map,
+			center: centerNew,
+			radius: values[val][3],
+			// url: ""
+			});
+			// var infowindow = new google.maps.InfoWindow({
+			// content: contentString,
+			// });
+			// infowindow[city] = new google.maps.InfoWindow({
+			  // content: citymap[city].radius;
+		   //  });
+			// cityCircle.addListener("click", () => {
+			// 	infowindow.open({
+			// anchor: cityCircle,
+			// map,
+			// shouldFocus: true,
+			// });
+			// });
+			// var Loc = new google.maps.LatLng(city.center.lat,city.center.lng);
+			var INFO_WINDOW_WIDTH = 352;                                
+			var infowindow = new google.maps.InfoWindow({
+			// position :Loc,
+			maxWidth: INFO_WINDOW_WIDTH
+			});
+
+			google.maps.event.addListener(cityCircle, 'click', function(ev){
+			infowindow.setPosition(cityCircle.getCenter());
+			infowindow.open(map);
+			infowindow.setContent(contentString);
+			})
+		};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		// for (const city in citymap) {
+		// 	var contentString = '<div id="content"> ' +
+		// 					'<div id="siteNotice">' +
+		// 					"</div>" +
+		// 					'<h1 id="firstHeading" class="firstHeading">Details</h1> \n' +
+		// 					'<div id="bodyContent">' +
+		// 					"<h4><b>Low-Income/Homeless Area</b>, as defined by a survey according to the law, is a large area</h4>\n" +
+		// 					"<h4> Click <a href = '' >here</a> to see all the upcoming events. </h4>\n" +
+		// 					"<h4> Click <a href ='' >here </a> to send an SMS to everyone in need. </h4>\n " 
+		// 					"</div>" +
+		// 					"</div>";
+		// 	const cityCircle = new google.maps.Circle({
+			
+		// 	strokeWeight: 2,
+		// 	fillColor: "red",
+		
+		// 	map,
+		// 	center: citymap[city].center,
+		// 	radius: citymap[city].radius,
+		// 	// url: ""
+		// 	});
+		// 	// var infowindow = new google.maps.InfoWindow({
+		// 	// content: contentString,
+		// 	// });
+		// 	// infowindow[city] = new google.maps.InfoWindow({
+		  // 	// content: citymap[city].radius;
+		   // //  });
+		// 	// cityCircle.addListener("click", () => {
+		// 	// 	infowindow.open({
+		// 	// anchor: cityCircle,
+		// 	// map,
+		// 	// shouldFocus: true,
+		// 	// });
+		// 	// });
+		// 	// var Loc = new google.maps.LatLng(city.center.lat,city.center.lng);
+		// 	var INFO_WINDOW_WIDTH = 352;                                
+		// 	var infowindow = new google.maps.InfoWindow({
+		// 	// position :Loc,
+		// 	maxWidth: INFO_WINDOW_WIDTH
+		// 	});
+
+		// 	google.maps.event.addListener(cityCircle, 'click', function(ev){
+		// 	infowindow.setPosition(cityCircle.getCenter());
+		// 	infowindow.open(map);
+		// 	infowindow.setContent(contentString);
+		// 	})
+		// };
+
+		var hybridMap = {
+			zoom: 14,
+			center: {
+				lat: 40.712784,
+				lng: -74.005941
+			},
+			mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+		new google.maps.Map(document.getElementById("hybrid_map"), hybridMap);
+	}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7fQCTLASDJSuJjurgQHdgfLDtt2V55VY&callback=initMaps" async defer></script>
+
+</body>
 </html>

@@ -96,6 +96,28 @@ def addEvent():
     venue = request.args.get('event_venue')
     return name
 
+@app.route('/maps', methods=['POST', 'GET'])
+def maps():
+    cursor = db.cursor()
+    sql = "Select * from Zipcodes limit 3;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    # return toJson(results)
+
+    return render_template('maps-google.html', result = results)
+
+@app.route('/authorityAccess', methods=['POST', 'GET'])
+def authorityAccess():
+    username = request.args.get('email')
+    password = request.args.get('pass')
+    validation(username, password)  #chcek if username and password exists in DB
+    cursor = db.cursor()
+    sql = "Select * from Zipcodes limit 3;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    # return toJson(results)
+    
+    return render_template('dashboardAuthority.html', result = results)
 
 def cancelEvent():
     pass
