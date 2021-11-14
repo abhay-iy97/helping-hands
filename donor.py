@@ -8,7 +8,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/donorAccess', methods=['POST', 'GET'])
-def login():
+def loginDonor():
     username = request.args.get('email')
     password = request.args.get('pass')
     validation(username, password)  #chcek if username and password exists in DB
@@ -29,6 +29,13 @@ def events():
 @app.route('/donations', methods=['POST', 'GET'])
 def donations():
     return render_template('donations.html')
+
+@app.route('/authorityAccess', methods=['POST', 'GET'])
+def loginAuthority():
+    username = request.args.get('email')
+    password = request.args.get('pass')
+    validation(username, password)  #chcek if username and password exists in DB
+    return render_template('dashboardAuthority.html')
 
 def validation(username, password):
     pass
