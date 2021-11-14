@@ -1,12 +1,18 @@
 from flask import Flask, redirect, url_for, render_template, request
 import requests
 import urllib
+import pymysql
 
 #initalizing flask app
-app = Flask(__name__)
-app.secret_key = 'my secret is my secret none of your secret'
+app = Flask("main")
+app.secret_key = 'my secret and not your secret'
 
 
+# @app.route('/aboutus')
+# def about():
+#     return render_template("about.html")
+
+db = pymysql.connect(host="sql3.freemysqlhosting.net", user="sql3450941", password="I1TIEzd82P", database="sql3450941")
 # @app.route('/aboutus')
 # def about():
 #     return render_template("about.html")
@@ -65,6 +71,7 @@ def login():
 def dashboard():
     return render_template('dashboard.html')
 
+
 @app.route('/profile', methods=['POST', 'GET'])
 def profile():
     return render_template('pages-profile.html')
@@ -77,6 +84,7 @@ def events():
 def donations():
     return render_template('donations.html')
 
+
 def validation(username, password):
     pass
 
@@ -87,6 +95,29 @@ def addEvent():
     date = request.args.get('event_date')
     venue = request.args.get('event_venue')
     return name
+
+@app.route('/maps', methods=['POST', 'GET'])
+def maps():
+    cursor = db.cursor()
+    sql = "Select * from Zipcodes limit 3;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    # return toJson(results)
+
+    return render_template('maps-google.html', result = results)
+
+@app.route('/authorityAccess', methods=['POST', 'GET'])
+def authorityAccess():
+    username = request.args.get('email')
+    password = request.args.get('pass')
+    validation(username, password)  #chcek if username and password exists in DB
+    cursor = db.cursor()
+    sql = "Select * from Zipcodes limit 3;"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    # return toJson(results)
+    
+    return render_template('dashboardAuthority.html', result = results)
 
 
 def cancelEvent():
