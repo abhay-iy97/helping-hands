@@ -94,7 +94,36 @@ def addEvent():
     time = request.args.get('event_time')
     date = request.args.get('event_date')
     venue = request.args.get('event_venue')
-    return name
+    
+    # Numbers from db in the same zipcode
+    numbers_to_message = ['+12028094943']
+    for number in numbers_to_message:
+        message = client.messages \
+            .create(
+            body='Event ' + str(name) + ' near You. Please reply Yes to confirm. Otherwise ignore.',
+            from_='+14158911938',
+            to=number
+        )
+
+        # print(message.sid)
+        # return message.status
+
+    return 'abc'
+
+
+@app.route("/smsreply", methods=['GET', 'POST'])
+def sms_reply():
+    """Respond to incoming calls with a simple text message."""
+    body = request.values.get('Body', None)
+    # Start our TwiML response
+    resp = MessagingResponse()
+
+    # Add a message
+    if body == 'Yes':
+        resp.message("Thank You for your registration.")
+
+    return str(resp)
+
 
 @app.route('/maps', methods=['POST', 'GET'])
 def maps():
